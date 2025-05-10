@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
-    if (typeof document === 'undefined') return;  // Ensure this only runs client-side
+    if (typeof document !== 'undefined') return;  // Ensure this only runs client-side
 
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
